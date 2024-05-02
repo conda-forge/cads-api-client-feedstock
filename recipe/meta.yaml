@@ -17,8 +17,8 @@ build:
 requirements:
   host:
     - python >=3.7
-    - setuptools >=45
-    - setuptools-scm >=6.2
+    - setuptools >=64
+    - setuptools-scm >=8
     - pip
   run:
     - python >=3.7
