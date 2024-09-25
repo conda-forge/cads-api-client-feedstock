@@ -1,5 +1,5 @@
 {% set name = "cads-api-client" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9551c41d3ba8c73f8789b8c1e280da630805e807401424250127043f91538c68
+  sha256: 330e795921b7bc346e66bca28e4dbb4a481226bc1981d44bd3672ff3162cd002
 
 build:
   noarch: python
