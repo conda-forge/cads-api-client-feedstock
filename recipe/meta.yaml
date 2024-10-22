@@ -1,5 +1,5 @@
 {% set name = "cads-api-client" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: dfa98d1bfb86bcf1a2beccb4c628eb44b51a3ca2f182809659298cf5395186ed
+  sha256: cf6029d3320e04032575f39d681cbdce8f1e12cba15de07f9e8ecae676cde5b0
 
 build:
   noarch: python
@@ -16,13 +16,14 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    # awaiting multiurl release, remove legacy-cgi once done
+    - python >=3.7,<3.13
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
     - typing_extensions
-    - python >=3.7
+    - python >=3.7,<3.13
     - attrs
     - multiurl
     - requests
