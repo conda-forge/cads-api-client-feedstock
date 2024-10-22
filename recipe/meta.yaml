@@ -16,13 +16,15 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    # awaiting multiurl release, remove legacy-cgi once done
+    - python >=3.7,<3.13
+    - legacy-cgi
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
     - typing_extensions
-    - python >=3.7
+    - python >=3.7,<3.13
     - attrs
     - multiurl
     - requests
