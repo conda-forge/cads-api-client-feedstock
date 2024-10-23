@@ -12,20 +12,20 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    # awaiting multiurl release, remove legacy-cgi once done
-    - python >=3.7,<3.13
+    - python >=3.8
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
     - typing_extensions
-    - python >=3.7,<3.13
+    - python >=3.8
     - attrs
-    - multiurl
+    # For python3.13 support
+    - multiurl >=0.3.2
     - requests
     - typing-extensions
 
