@@ -146,6 +146,3 @@ Feedstock Maintainers
 * [@akrherz](https://github.com/akrherz/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
