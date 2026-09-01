@@ -1,0 +1,53 @@
+schema_version: 1
+
+context:
+  name: cads-api-client
+  version: "1.5.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: f06a405eac585131cb140180cbc2bf9c2784b3dbd6278411d3e9f53d78b7f933
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=64
+    - setuptools-scm >=8
+    - pip
+  run:
+    - typing_extensions
+    - python >=${{ python_min }}
+    - attrs
+    # For python3.13 support
+    - multiurl >=0.3.2
+    - requests
+    - typing-extensions
+
+tests:
+  - python:
+      imports:
+        - cads_api_client
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  summary: CADS API Python client
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/ecmwf-projects/cads-api-client
+
+extra:
+  recipe-maintainers:
+    - akrherz
+    - ocefpaf
